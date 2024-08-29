@@ -1,0 +1,31 @@
+{
+  "author": "Tit@r",
+  "bundleDependencies": false,
+  "dependencies": {
+    "html-critical-webpack-plugin-pro": "^1.0.1"
+  },
+  "deprecated": false,
+  "description": "A Laravel Mix extension for Critical CSS.",
+  "homepage": "https://github.com/titarsv/laravel-mix-criticalcss-pro#readme",
+  "keywords": [
+    "laravel",
+    "laravel mix",
+    "mix",
+    "critical",
+    "webpack"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "laravel-mix-criticalcss-pro",
+  "peerDependencies": {
+    "laravel-mix": "^4.0.0 || ^5.0.0 || ^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/titarsv/laravel-mix-criticalcss-pro.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
