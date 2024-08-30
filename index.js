@@ -45,11 +45,19 @@ class CriticalPro {
 
                 }
 
-                plugins.push(new HtmlCriticalPro(Object.assign({
+                let pageOptions = Object.assign({
                     src: criticalSrc,
-                    dest: criticalDest,
-                    excludedSources: typeof(template.excludedSources) !== 'undefined' ? template.excludedSources : [],
-                }, this.config.options)));
+                    dest: criticalDest
+                }, this.config.options);
+
+                let additionalParams = ['excludedSources', 'width', 'height'];
+                for(let key in additionalParams){
+                    if(typeof(template[additionalParams[key]]) !== 'undefined'){
+                        pageOptions[additionalParams[key]] = template[additionalParams[key]];
+                    }
+                }
+
+                plugins.push(new HtmlCriticalPro(pageOptions));
 
             });
 
