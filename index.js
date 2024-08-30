@@ -30,11 +30,13 @@ class CriticalPro {
         if (this.config.enabled) {
             const HtmlCriticalPro = require('html-critical-webpack-plugin-pro');
             const plugins = [];
+            const files = [];
 
             this.config.urls.forEach((template) => {
 
                 const criticalSrc = this.config.paths.base + template.url;
                 const criticalDest = this.config.paths.templates + template.template + this.config.paths.suffix + '.css';
+                files.push(this.config.paths.templates.replace('./public/', '') + template.template + this.config.paths.suffix + '.css');
 
                 if (criticalSrc.indexOf('amp_') !== -1) {
 
@@ -50,6 +52,10 @@ class CriticalPro {
                 }, this.config.options)));
 
             });
+
+            for(let i in files){
+                global.Mix.manifest.add(files[i]);
+            }
 
             return plugins;
 
